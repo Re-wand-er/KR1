@@ -16,7 +16,7 @@ $result = $conn->query("SELECT * FROM products ORDER BY created_at DESC");
     <!--<a href="update_status.php" class="btn btn-success mb-3">Обновить продукт</a>-->
     <table class="table table-bordered">
         <tr>
-            <th>Название</th><th>Описание</th><th>Количество</th><th>Срок годности</th><th>Статус</th><th>Действия</th>
+            <th>Название продука</th><th>Описание (опционально)</th><th>Количество</th><th>Срок годности</th><th>Статус</th><th>Действия</th>
         </tr>
         <?php while($row = $result->fetch_assoc()): ?>
         <tr>
@@ -29,7 +29,7 @@ $result = $conn->query("SELECT * FROM products ORDER BY created_at DESC");
                 <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-primary btn-sm">Редактировать</a>
                 <a href="delete.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm"
                    onclick="return confirm('Удалить продукт?');">Удалить</a>
-                <a href="update_status.php?id=<?= $row['id'] ?>" class="btn btn-warning btn-sm">Использован</a>
+                <a href="update_status.php?id=<?= $row['id'] ?>" class="btn btn-warning btn-sm">Изменить статус</a>
             </td>
         </tr>
         <?php endwhile; ?>
